@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Dingtalk-LivePlayback-Downloader",
+    platforms: [.iOS(.v14), .macOS(.v13)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -23,6 +24,7 @@ let package = Package(
             dependencies: []),
         .testTarget(
             name: "Dingtalk-LivePlayback-DownloaderTests",
-            dependencies: ["Dingtalk-LivePlayback-Downloader"]),
+            dependencies: ["Dingtalk-LivePlayback-Downloader"],
+            resources: [.process("Resources/test-model.har")]),
     ]
 )
